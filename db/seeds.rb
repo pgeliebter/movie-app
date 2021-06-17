@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# actor = Actor.new({ first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock" })
+# actor.save
+
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
