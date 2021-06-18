@@ -9,16 +9,10 @@
 # actor = Actor.new({ first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock" })
 # actor.save
 
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
-Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+10.times do
+  Actor.create(first_name: FFaker::Name.unique.first_name, last_name: FFaker::Name.unique.last_name, known_for: FFaker::CheesyLingo.unique.title)
+end
+
+10.times do
+  Movie.create(title: FFaker::Movie.unique.title, year: FFaker::Vehicle.unique.year, plot: FFaker::Book.unique.description)
+end
