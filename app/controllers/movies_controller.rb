@@ -1,16 +1,36 @@
 class MoviesController < ApplicationController
-  def all_movies
-    render json: Movie.all.as_json
+  def index
+    input = Movie.all
+    render json: input
   end
 
-  def one_movie
-    input = params["id"]
-    render json: Movie.find_by(id: input).as_json
+  def create
+    movie = Movie.new(
+      title: params[:title],
+      year: params[:year],
+      plot: params[:plot],
+    )
+    movie.save
+    render json: movie
   end
 
-  def two_movies
-    id1 = params["id1"]
-    id2 = params["id2"]
-    render json: Movie.where(id: id1).or(Movie.where(id: id2))
+  def show
+    id = params[:id]
+    movie = Movie.find(id)
+    render json: movie
+  end
+
+  def update
+    movie = Movie.find(params[:id])
+    movie.title = params[:title] || movie.title
+    movie.year = params[:year] || movie.year
+    movie.plot = params[:plot] || movie.plot
+    render json: movie
+  end
+
+  def destroy
+    movie = Movie.find(params[:id])
+    movie.destroy
+    render json: { deleted: movie }
   end
 end
