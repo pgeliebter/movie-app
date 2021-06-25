@@ -30,6 +30,7 @@ class ActorsController < ApplicationController
     actor.known_for = params[:known_for] || actor.known_for
     actor.age = params[:age] || actor.age
     actor.gender = params[:gender] || actor.gender
+    actor.save
     render json: actor
   end
 

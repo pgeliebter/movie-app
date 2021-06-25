@@ -29,6 +29,7 @@ class MoviesController < ApplicationController
     movie.plot = params[:plot] || movie.plot
     movie.english = params[:english] || movie.english
     movie.director = params[:director] || movie.director
+    actor.save
     render json: movie
   end
 
