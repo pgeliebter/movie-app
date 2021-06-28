@@ -1,4 +1,4 @@
 class Movie < ApplicationRecord
   validates :title, presence: true
-  validates :year, inclusion: { in: 1900..2025 }
+  validates :year, numericality: { less_than_or_equal_to: 2025, greater_than_or_equal_to: 1901 }
 end

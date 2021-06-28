@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    input = Movie.all
+    input = Movie.where("english = ?", true)
     render json: input
   end
 
@@ -12,8 +12,11 @@ class MoviesController < ApplicationController
       english: params[:english],
       director: params[:director],
     )
-    movie.save
-    render json: movie
+    if movie.save
+      render json: movie
+    else
+      render json: { "Attempted save": movie, errors: movie.errors.full_messages }
+    end
   end
 
   def show
@@ -29,13 +32,21 @@ class MoviesController < ApplicationController
     movie.plot = params[:plot] || movie.plot
     movie.english = params[:english] || movie.english
     movie.director = params[:director] || movie.director
-    actor.save
-    render json: movie
+    if movie.save
+      render json: movie
+    else
+      render json: { "Attempted save": movie, errors: movie.errors.full_messages }
+    end
   end
 
   def destroy
     movie = Movie.find(params[:id])
     movie.destroy
     render json: { deleted: movie }
+  end
+
+  def test
+    t1 = Product.all
+    render json: t1
   end
 end

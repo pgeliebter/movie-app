@@ -1,6 +1,6 @@
 class ActorsController < ApplicationController
   def index
-    input = Actor.all
+    input = Actor.all.order(:age)
     render json: input
   end
 
@@ -13,8 +13,11 @@ class ActorsController < ApplicationController
       gender: params[:gender],
 
     )
-    actor.save
-    render json: actor
+    if actor.save
+      render json: actor
+    else
+      render json: { "Attempted create": actor, errors: actor.errors.full_messages }
+    end
   end
 
   def show
@@ -28,10 +31,13 @@ class ActorsController < ApplicationController
     actor.first_name = params[:first_name] || actor.first_name
     actor.last_name = params[:last_name] || actor.last_name
     actor.known_for = params[:known_for] || actor.known_for
-    actor.age = params[:age] || actor.age
+    actor.age = params[:age] #|| actor.age
     actor.gender = params[:gender] || actor.gender
-    actor.save
-    render json: actor
+    if actor.save
+      render json: actor
+    else
+      render json: { "Attempted save": actor, errors: actor.errors.full_messages }
+    end
   end
 
   def destroy
