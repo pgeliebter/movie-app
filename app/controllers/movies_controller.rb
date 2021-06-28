@@ -44,9 +44,4 @@ class MoviesController < ApplicationController
     movie.destroy
     render json: { deleted: movie }
   end
-
-  def test
-    t1 = Product.all
-    render json: t1
-  end
 end
