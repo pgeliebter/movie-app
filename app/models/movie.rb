@@ -6,9 +6,7 @@ class Movie < ApplicationRecord
   has_many :movie_genres
   has_many :genres, through: :movie_genres
 
-  def genres
-    movie_genres.map do |movie_genres|
-      movie_genres.genre.name
-    end
+  def genres_names
+    genres.map { |genre| genre.name }
   end
 end
