@@ -5,4 +5,10 @@ class Movie < ApplicationRecord
   has_many :actors
   has_many :movie_genres
   has_many :genres, through: :movie_genres
+
+  def genres
+    movie_genres.map do |movie_genres|
+      movie_genres.genre.name
+    end
+  end
 end
