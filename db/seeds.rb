@@ -1,29 +1,55 @@
-Genre.create!([
-  { name: "Thriller" },
-  { name: "Fantasy" },
-  { name: "Sci-Fi" },
-])
-Movie.create!([
-  { title: "The Journals from the Black Lagoon", year: 1982, plot: "Aliquid maiores aliquam saepe dolor quae. Sed inventore harum dolorem aliquam quas amet perferendis quasi. Laudantium dignissimos tempore itaque recusandae fuga natus molestias. Accusamus occaecati necessitatibus perspiciatis iste atque.", director: nil, english: true },
-  { title: "Dangerous Friday", year: 1972, plot: "Nobis ea similique fugit aperiam. Delectus sunt praesentium voluptate ratione. Eum soluta ab voluptatibus eos. Perspiciatis recusandae cum qui quis.", director: nil, english: true },
-  { title: "The Hungry Tentacle from Outer Space", year: 1992, plot: "Id iure beatae optio placeat quae laboriosam minima. A exercitationem quia natus error. Commodi ipsa pariatur quos velit dolores. Fugiat sapiente fugit laudantium id quasi.", director: nil, english: true },
-  { title: "Journey of the Forbidden Journals", year: 1906, plot: "Repudiandae magni laboriosam veniam labore quia. Reprehenderit voluptas aliquam dolorum nam earum omnis nesciunt. Blanditiis delectus atque recusandae eos expedita.", director: nil, english: true },
-  { title: "Dr. Identity", year: 1978, plot: "Omnis cumque sapiente animi doloribus aliquid eaque. Qui quas provident porro deleniti iusto occaecati aspernatur. Tempora distinctio quisquam perferendis sunt beatae ipsum quis repudiandae. In tempora doloremque debitis nihil.", director: nil, english: true },
-  { title: "Nuclear Rain: The Yer Smith Story", year: 2009, plot: "Atque ut esse non molestias eum natus quas numquam. Dolor vitae porro recusandae fugit illo. Aut consequatur aliquid nesciunt dignissimos soluta. Provident architecto asperiores nobis odio tempora harum consectetur. Sunt voluptate vel voluptatem praesentium placeat inventore.", director: nil, english: true },
-  { title: "Blonde Tears", year: 1941, plot: "Assumenda sed expedita impedit molestiae rerum praesentium. Totam cum dolore similique in at corrupti earum quia. A cumque non nemo natus beatae odio sint. Quidem itaque quasi dignissimos corrupti mollitia voluptatum. Unde quasi ipsum nam nobis.", director: nil, english: true },
-  { title: "The White Rose of Wales", year: 2002, plot: "Hic incidunt beatae quas aliquam molestiae eaque atque repudiandae. Similique nihil vitae alias ipsam fugiat perspiciatis. Enim eveniet aperiam mollitia excepturi eaque non.", director: nil, english: true },
-  { title: "The Ninjas from 12591 Leagues", year: 1979, plot: "Nisi perspiciatis deserunt porro quod vero voluptatum minus sapiente. Ratione ullam id recusandae iusto animi doloremque maiores vero. Exercitationem velit pariatur voluptatum quam aliquid et illo vel. Iusto libero beatae dolores ipsa architecto eum. Voluptatibus enim consequuntur amet dolorem nam quas tenetur.", director: nil, english: true },
-  { title: "Golden Cookie", year: 1950, plot: nil, director: nil, english: true },
-])
-Actor.create!([
-  { first_name: "Aleisha", last_name: "Krajcik", known_for: "Blonde Tears", age: 25, gender: "Female", movie_id: 2 },
-  { first_name: "Graph", last_name: "Bock", known_for: "Blonde Tears", age: 25, gender: "Female", movie_id: 1 },
-  { first_name: "Danial", last_name: "Nader", known_for: "Blonde Tears", age: 25, gender: "Female", movie_id: 3 },
-  { first_name: "Simon", last_name: "Hamill", known_for: "Blonde Tears", age: 25, gender: "Female", movie_id: 4 },
-  { first_name: "Essie", last_name: "McGlynn", known_for: "Blonde Tears", age: 23, gender: "Female", movie_id: 5 },
-  { first_name: "Grace", last_name: "Ferry", known_for: "Blonde Tears", age: 25, gender: "Female", movie_id: 6 },
-  { first_name: "Marlo", last_name: "Langosh", known_for: "Blonde Tears", age: 25, gender: "Female", movie_id: 7 },
-  { first_name: "Johnny", last_name: "Schulist", known_for: "Blonde Tears", age: 25, gender: "Female", movie_id: 8 },
-  { first_name: "Myesha", last_name: "Huel", known_for: "Blonde Tears", age: 25, gender: "Female", movie_id: 9 },
-  { first_name: "Maribel", last_name: "Littel", known_for: "Blonde Tears", age: 23, gender: "Female", movie_id: 10 },
+# Genre.create!([
+#   { name: "Thriller" },
+#   { name: "Action" },
+#   { name: "Drama" },
+#   { name: "War" },
+#   { name: "Romance" },
+#   { name: "Sci-Fi" },
+#   { name: "Adventure" },
+#   { name: "Crime" },
+# ])
+
+# Movie.create!([
+#   { title: "Saving Private Ryan", year: 1998, plot: "Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.", director: "Steven Spielberg", english: true },
+#   { title: "Shooter", year: 2007, plot: "A marksman living in exile is coaxed back into action after learning of a plot to kill the President. After being double crossed for the attempt and on the run, he sets out for the real killer and the truth.", director: "Antoine Fuqua", english: true },
+#   { title: "The Departed", year: 2006, plot: "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.", director: "Martin Scorsese", english: true },
+#   { title: "Titanic", year: 1997, plot: "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.", director: "James Cameron", english: true },
+#   { title: "Inception", year: 2010, plot: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.", director: "Christopher Nolan", english: true },
+#   { title: "The Bourne Identity", year: 2002, plot: "A man is picked up by a fishing boat, bullet-riddled and suffering from amnesia, before racing to elude assassins and attempting to regain his memory.", director: "Doug Liman", english: true },
+# ])
+# Actor.create!([
+#   { first_name: "Tom", last_name: "Hanks", known_for: "Saving Private Ryan", age: 65, gender: "Male", movie_id: 1 },
+#   { first_name: "Mark", last_name: "Wahlberg", known_for: "Shooter", age: 50, gender: "Male", movie_id: 2 },
+#   { first_name: "Leonardo", last_name: "DiCaprio", known_for: "Titanic", age: 47, gender: "Male", movie_id: 4 },
+#   { first_name: "Matt", last_name: "Damon", known_for: "The Bourne Identity", age: 51, gender: "Male", movie_id: 6 },
+# ])
+
+# MovieGenre.create!([
+#   { movie_id: 6, genre_id: 1 },
+#   { movie_id: 6, genre_id: 2 },
+#   { movie_id: 5, genre_id: 2 },
+#   { movie_id: 5, genre_id: 6 },
+#   { movie_id: 5, genre_id: 7 },
+#   { movie_id: 4, genre_id: 3 },
+#   { movie_id: 4, genre_id: 5 },
+#   { movie_id: 3, genre_id: 1 },
+#   { movie_id: 3, genre_id: 3 },
+#   { movie_id: 3, genre_id: 8 },
+#   { movie_id: 2, genre_id: 1 },
+#   { movie_id: 2, genre_id: 2 },
+#   { movie_id: 2, genre_id: 3 },
+#   { movie_id: 1, genre_id: 3 },
+#   { movie_id: 1, genre_id: 4 },
+# ])
+MovieActor.create!([
+  { actor_id: 1, movie_id: 1 },
+  { actor_id: 2, movie_id: 2 },
+  { actor_id: 2, movie_id: 3 },
+  { actor_id: 3, movie_id: 3 },
+  { actor_id: 3, movie_id: 4 },
+  { actor_id: 3, movie_id: 5 },
+  { actor_id: 4, movie_id: 1 },
+  { actor_id: 4, movie_id: 3 },
+  { actor_id: 4, movie_id: 5 },
+  { actor_id: 4, movie_id: 6 },
 ])

@@ -1,6 +1,8 @@
 class MoviesController < ApplicationController
   def index
-    input = Movie.where("english = ?", true)
+    #leavign out for now so i can debug why index doesn't work
+    # input = Movie.where("english = ?", true)
+    input = Movie.all
     render json: input
   end
 
