@@ -10,4 +10,8 @@ class Movie < ApplicationRecord
   def genres_names
     genres.map { |genre| genre.name }
   end
+
+  def actors_hash
+    actors.map { |actor| { id: actor.id, firstName: actor.first_name, lastName: actor.last_name } }
+  end
 end
