@@ -7,6 +7,9 @@ class MoviesController < ApplicationController
   end
 
   def create
+    if !params[:english]
+      params[:english] = false
+    end
     movie = Movie.new(
       title: params[:title],
       year: params[:year],
