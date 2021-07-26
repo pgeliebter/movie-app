@@ -1,4 +1,7 @@
 class MoviesController < ApplicationController
+  # commenting out the authenticate_user for right now. Will add back when testing auth for front end.
+  # before_action :authenticate_user
+
   def index
     #leavign out for now so i can debug why index doesn't work
     # input = Movie.where("english = ?", true)
