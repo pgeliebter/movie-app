@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
-  # commenting out the authenticate_user for right now. Will add back when testing auth for front end.
-  # before_action :authenticate_user
+  before_action :authenticate_user
 
   def index
     #leavign out for now so i can debug why index doesn't work
@@ -10,9 +9,10 @@ class MoviesController < ApplicationController
   end
 
   def create
-    if !params[:english]
-      params[:english] = false
-    end
+    # using a front-end method to control this. not needed anymore.
+    # if !params[:english]
+    #   params[:english] = false
+    # end
     movie = Movie.new(
       title: params[:title],
       year: params[:year],
